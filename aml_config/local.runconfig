@@ -1,0 +1,11 @@
+{
+  "Description":"Run the project on your local computer.\nML frameworks like Spark need to be managed manually.\nThird-party library dependencies are managed through Conda -- to change them, edit conda_dependencies.yml",
+  "ArgumentVector":[
+    "$file"
+  ],
+  "CondaFile":null,
+  "ManagedEnvironment":true,
+  "TrackedRun":true,
+  "Target":"local",
+  "PrepareEnvironment":true
+}

@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 34,
+  "id": "9e33fc32-7dbe-471b-a45f-ad8a2f00b6a3",
+  "activities": [
+    {
+      "id": "b615606a-8f36-46e4-b09c-351ec144b48c",
+      "name": "iris",
+      "blocks": [
+        {
+          "id": "5d0de554-d4f8-46b5-9938-2087afba28d9",
+          "type": "Microsoft.DPrep.ReferenceActivityBlock",
+          "arguments": {
+            "reference": {
+              "referenceType": 1,
+              "referenceContainerPath": "./iris.dsource",
+              "referencedActivityId": "f7c3b442-a0ec-4762-a342-e13fcd4c7cfd",
+              "referencedBranchId": null,
+              "referencedStep": null,
+              "anonymousSteps": null
+            }
+          }
+        },
+        {
+          "id": "a96f2e25-9305-44e2-901c-8344d258f942",
+          "type": "Microsoft.DPrep.SampleBlock",
+          "arguments": {
+            "samples": [
+              {
+                "sampleId": "073ad3ac-06c4-40aa-8068-31469d68ff30",
+                "sampleRevision": "3c758701-7391-4c54-b0d5-2e0d4366c594",
+                "sampleRunner": {
+                  "id": null,
+                  "type": 0
+                },
+                "remoteGeneratorProperties": {},
+                "sampleStrategy": 3,
+                "topArguments": {
+                  "sampleCount": 10000
+                },
+                "randomNArguments": {
+                  "sampleCount": 10000
+                },
+                "randomPercentArguments": {
+                  "probability": 0.1
+                },
+                "allowAutoGen": true,
+                "isDisabled": false
+              }
+            ],
+            "activeSample": "073ad3ac-06c4-40aa-8068-31469d68ff30"
+          }
+        },
+        {
+          "id": "712bc457-6af8-44e1-a794-a58a70954c5f",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Sepal Length",
+            "columnId": "Column1"
+          }
+        },
+        {
+          "id": "eecd8667-57a2-42bd-8f03-4a48d4ec37ee",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Sepal Width",
+            "columnId": "Column2"
+          }
+        },
+        {
+          "id": "02c48b12-b820-441f-b643-6210f1721135",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Petal Length",
+            "columnId": "Column3"
+          }
+        },
+        {
+          "id": "30e450c0-364b-4eaf-8f1b-16d66e9cb0c3",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Petal Width",
+            "columnId": "Column4"
+          }
+        },
+        {
+          "id": "61447bff-3606-4d41-898e-17c5a94136c8",
+          "type": "Microsoft.DPrep.ColumnRenameBlock",
+          "arguments": {
+            "newColumnId": "Species",
+            "columnId": "Column5"
+          }
+        },
+        {
+          "id": "166459f0-55a5-4f6e-8cb4-263d6097ae0a",
+          "type": "Microsoft.DPrep.FilterStringColumnBlock",
+          "arguments": {
+            "columnId": "Species",
+            "filterResult": 1,
+            "clauseRelationship": 1,
+            "clauses": [
+              {
+                "operator": 0,
+                "value": "(null)"
+              }
+            ]
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "6670b2bc-3772-4fc3-83f8-6c9baa9a1583",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "b615606a-8f36-46e4-b09c-351ec144b48c",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": true
+        },
+        {
+          "id": "50e182b2-5ac0-4369-9013-bcca6997cb88",
+          "type": "Microsoft.DPrep.ValueCountInspector",
+          "arguments": {
+            "columnId": "Species",
+            "numberOfTopValues": 6,
+            "descending": true,
+            "includeNulls": true,
+            "haloEffect": true
+          },
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "b615606a-8f36-46e4-b09c-351ec144b48c",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": true
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}

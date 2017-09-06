@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 34,
+  "id": "f8c67efb-ca0a-4fd3-9803-2141f8816220",
+  "activities": [
+    {
+      "id": "f7c3b442-a0ec-4762-a342-e13fcd4c7cfd",
+      "name": "iris",
+      "blocks": [
+        {
+          "id": "35758841-6538-4e3e-90b2-0b888f40b888",
+          "type": "Microsoft.DPrep.DataSourceBlock",
+          "arguments": {
+            "path": {
+              "target": 0,
+              "resourceDetails": [
+                {
+                  "path": "./iris.csv"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "1e7a26f9-49b1-4bf4-9888-e47a27d772a4",
+          "type": "Microsoft.DPrep.ParseDelimitedBlock",
+          "arguments": {
+            "preview": false,
+            "columnHeadersMode": 0,
+            "separator": ",",
+            "fileEncoding": 0,
+            "skipRowsMode": 0,
+            "handleQuotedLineBreaks": false
+          }
+        },
+        {
+          "id": "7a561ba0-cf22-4c4b-bd05-dd86d3e4baf8",
+          "type": "Microsoft.DPrep.SetColumnTypesBlock",
+          "arguments": {
+            "columnConversion": [
+              {
+                "columnId": "Column1",
+                "typeProperty": 3
+              },
+              {
+                "columnId": "Column4",
+                "typeProperty": 3
+              },
+              {
+                "columnId": "Column3",
+                "typeProperty": 3
+              },
+              {
+                "columnId": "Column2",
+                "typeProperty": 3
+              }
+            ]
+          }
+        },
+        {
+          "id": "bea6fba1-4cef-4ead-aa19-a0dff4783b62",
+          "type": "Microsoft.DPrep.SampleBlock",
+          "arguments": {
+            "samples": [
+              {
+                "sampleId": "36960f3f-f599-4cfc-b864-f6f76249064f",
+                "sampleRevision": "291f481e-7c8b-4270-82e0-46be0b1f2708",
+                "sampleName": "Top 10000",
+                "sampleRunner": {
+                  "id": null,
+                  "type": 0
+                },
+                "remoteGeneratorProperties": {},
+                "sampleStrategy": 0,
+                "topArguments": {
+                  "sampleCount": 10000
+                },
+                "randomNArguments": {
+                  "sampleCount": 10000
+                },
+                "randomPercentArguments": {
+                  "probability": 0.1
+                },
+                "allowAutoGen": true,
+                "isDisabled": false
+              }
+            ],
+            "activeSample": "36960f3f-f599-4cfc-b864-f6f76249064f"
+          }
+        },
+        {
+          "id": "54237c35-94ad-49ee-a3da-8c373a36004f",
+          "type": "Microsoft.DPrep.HandlePathColumnBlock",
+          "arguments": {
+            "pathColumnOperation": 0
+          }
+        }
+      ],
+      "inspectors": [
+        {
+          "id": "1ff2a026-48a9-4474-b559-0b25d4644846",
+          "type": "Microsoft.DPrep.DataQualityInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "f7c3b442-a0ec-4762-a342-e13fcd4c7cfd",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 1,
+              "referencedStepId": null,
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": true
+        },
+        {
+          "id": "7c1ca0a2-8e11-4044-afae-f4a212973e2e",
+          "type": "Microsoft.DPrep.DataProfileInspector",
+          "arguments": {},
+          "reference": {
+            "referenceType": 0,
+            "referenceContainerPath": null,
+            "referencedActivityId": "f7c3b442-a0ec-4762-a342-e13fcd4c7cfd",
+            "referencedBranchId": null,
+            "referencedStep": {
+              "stepReferenceType": 0,
+              "referencedStepId": "54237c35-94ad-49ee-a3da-8c373a36004f",
+              "fallback": 1
+            },
+            "anonymousSteps": null
+          },
+          "isBackground": true
+        }
+      ]
+    }
+  ],
+  "runConfigurations": []
+}

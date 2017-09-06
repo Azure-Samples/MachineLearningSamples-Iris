@@ -1,0 +1,12 @@
+{
+  "Description":"Run the project on your local computer inside a custom-built docker container.\nML frameworks like Spark are automatically provisioned inside the container -- to change what gets installed, edit base_dependencies.yml.\nThird-party library dependencies are managed through Conda -- to change them, edit conda_dependencies.yml",
+  "ArgumentVector":[
+    "$file"
+  ],
+  "CondaFile":null,
+  "ManagedEnvironment":true,
+  "TrackedRun":true,
+  "Target":"docker-python",
+  "PrepareEnvironment":true,
+  "Framework":"Python"
+}
