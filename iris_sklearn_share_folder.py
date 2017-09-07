@@ -6,10 +6,10 @@ import os
 
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
-from azureml.sdk import data_collector
+from azureml.logging import get_azureml_logger
 
 # initialize the logger
-run_logger = data_collector.current_run() 
+run_logger = get_azureml_logger() 
 
 # create the outputs folder
 os.makedirs('./outputs', exist_ok=True)

@@ -10,10 +10,10 @@ from pyspark.ml.classification import *
 from pyspark.ml.evaluation import *
 from pyspark.ml.feature import *
 
-from azureml.sdk import data_collector
+from azureml.logging import get_azureml_logger
 
 # initialize logger
-run_logger = data_collector.current_run() 
+run_logger = get_azureml_logger() 
 
 # start Spark session
 spark = pyspark.sql.SparkSession.builder.appName('Iris').getOrCreate()
