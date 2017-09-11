@@ -89,6 +89,12 @@ X_new_with_random_features = np.c_[X_new, random_state.randn(1, n)]
 pred = clf2.predict(X_new_with_random_features)
 print('Predicted class is {}'.format(pred))
 
-# plot confusion matrix and ROC curve
-plot_iris(clf1, X, Y)
-print("Confusion matrix and ROC curve plotted. See them in Run History details page.")
+try:
+    import matplotlib
+    # plot confusion matrix and ROC curve
+    plot_iris(clf1, X, Y)
+    print("Confusion matrix and ROC curve plotted. See them in Run History details page.")
+except ImportError:
+    print("matplotlib not found so no plots produced.")
+    print("Please install it from command-line window by typing \"pip install matplotlib\".")
+    
