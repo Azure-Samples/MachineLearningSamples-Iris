@@ -1,5 +1,6 @@
 try:
-    import matplotlibfrom scipy import interp
+    import matplotlib
+    from scipy import interp
     from itertools import cycle
     import numpy as np
 
