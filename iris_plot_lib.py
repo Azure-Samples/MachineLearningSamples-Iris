@@ -1,14 +1,14 @@
-import matplotlib
-matplotlib.use('agg')
-import matplotlib.pyplot as plt
+try:
+    import matplotlibfrom scipy import interp
+    from itertools import cycle
+    import numpy as np
 
-from scipy import interp
-from itertools import cycle
-import numpy as np
-
-from sklearn.metrics import roc_curve, auc
-from sklearn.metrics import confusion_matrix
-from sklearn.preprocessing import label_binarize
+    from sklearn.metrics import roc_curve, auc
+    from sklearn.metrics import confusion_matrix
+    from sklearn.preprocessing import label_binarize
+except ImportError:
+    print("Library (matplotlib or sklearn) missing. Can't plot.")
+    
 
 # note this is alphabetically ordered.
 labels = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
