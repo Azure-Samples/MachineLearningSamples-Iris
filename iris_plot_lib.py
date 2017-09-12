@@ -1,5 +1,7 @@
 try:
     import matplotlib
+    matplotlib.use('agg')
+    import matplotlib.pyplot as plt
     from scipy import interp
     from itertools import cycle
     import numpy as np
