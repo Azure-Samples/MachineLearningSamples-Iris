@@ -15,6 +15,8 @@ except ImportError:
         def __init__(self, *args, **kw): return None
     pass
 
+import os
+
 # Prepare the web service definition by authoring
 # init() and run() functions. Test the functions
 # before deploying the web service.
