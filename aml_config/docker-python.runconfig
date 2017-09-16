@@ -1,6 +1,6 @@
 ArgumentVector:
   - "$file"
-Target: "docker-python"
+Target: "docker"
 EnvironmentVariables:
   "EXAMPLE_ENV_VAR": "Example Value"
 Framework: "Python"

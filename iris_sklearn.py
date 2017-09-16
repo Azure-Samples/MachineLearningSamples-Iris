@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 from azureml.logging import get_azureml_logger
 from azureml.dataprep.package import run
 
-from iris_plot_lib import plot_iris
+from plot_graphs import plot_iris
 
 # initialize the logger
 run_logger = get_azureml_logger() 

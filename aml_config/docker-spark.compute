@@ -1,4 +1,0 @@
-type: "localdocker"
-baseDockerImage: "microsoft/mmlspark:plus-0.7.9"
-#nativeSharedDirectory: "~/.azureml/share/"
-#sharedVolumes: true
