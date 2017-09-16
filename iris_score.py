@@ -65,7 +65,7 @@ def main():
   inputs = {"input_df": SampleDefinition(DataTypes.PANDAS, df)}
   
   #Genereate the schema
-  generate_schema(run_func=run, inputs=inputs, filepath='service_schema.json')
+  generate_schema(run_func=run, inputs=inputs, filepath='./outputs/service_schema.json')
   print("Schema generated")
 
 if __name__ == "__main__":
