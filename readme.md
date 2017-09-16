@@ -35,7 +35,7 @@ $ az ml experiment submit -c docker-spark iris_pyspark.py
 
 Create _myvm.compute_ file to point to a remote VM
 ```
-$ az ml computetarget attach --name <myvm> --address <ip address or FQDN> --username <username> --password <pwd>
+$ az ml computetarget attach --name <myvm> --address <ip address or FQDN> --username <username> --password <pwd> --type remotedocker
 ```
 
 Run _iris_pyspark.py_ in a Docker container (with Spark) in a remote VM:
