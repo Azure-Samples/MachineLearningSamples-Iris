@@ -50,7 +50,7 @@ $ az ml experiment submit -c myvm iris_pyspark.py
 
 Create `myhdi` run configuration to point to an HDI cluster
 ```
-$ az ml computetarget attach --name <myhdi> --address <ip address or FQDN of the head node> --username <username> --password <pwd> --cluster
+$ az ml computetarget attach --name <myhdi> --address <ip address or FQDN of the head node> --username <username> --password <pwd> --type cluster
 ```
 
 Run in a remote HDInsight cluster:
