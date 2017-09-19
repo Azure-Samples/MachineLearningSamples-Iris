@@ -13,7 +13,7 @@ from sklearn.metrics import precision_recall_curve
 from azureml.logging import get_azureml_logger
 from azureml.dataprep.package import run
 
-from plot_graphsb import plot_iris
+from plot_graphs import plot_iris
 
 # initialize the logger
 run_logger = get_azureml_logger() 
