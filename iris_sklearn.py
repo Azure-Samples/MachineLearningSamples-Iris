@@ -8,11 +8,12 @@ from sklearn.metrics import confusion_matrix
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import precision_recall_curve
 
 from azureml.logging import get_azureml_logger
 from azureml.dataprep.package import run
 
-from plot_graphs import plot_iris
+from iris_plot_lib import plot_iris
 
 # initialize the logger
 run_logger = get_azureml_logger() 
@@ -23,8 +24,8 @@ os.makedirs('./outputs', exist_ok=True)
 print('Python version: {}'.format(sys.version))
 print()
 
-# invoke the iris.dprep data prep package to generate a pandas DataFrame
-iris = run('iris.dprep', dataflow_idx=0, spark=False)
+# load Iris dataset from a DataPrep package
+iris = run('iris.dprep', dataflow_idx=0)
 print ('Iris dataset shape: {}'.format(iris.shape))
 
 # load features and labels
@@ -59,8 +60,15 @@ print (clf1)
 accuracy = clf1.score(X_test, Y_test)
 print ("Accuracy is {}".format(accuracy))
 
-# log accuracy
+# log accuracy which is a single numerical value
 run_logger.log("Accuracy", accuracy)
+
+# calculate and log precesion, recall, and thresholds, which are list of numerical values
+y_scores = clf1.predict_proba(X_test)
+precision, recall, thresholds = precision_recall_curve(Y_test, y_scores[:,1],pos_label='Iris-versicolor')
+run_logger.log("Precision", precision)
+run_logger.log("Recall", recall)
+run_logger.log("Thresholds", thresholds)
 
 print("")
 print("==========================================")
