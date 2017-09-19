@@ -2,7 +2,7 @@
 
 This is a companion sample project of the Azure Machine Learning QuickStart and Tutorials. Using the timeless [Iris flower dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set), it walks you through the basics of preparing dataset, creating a model and deploying it as a web service.
 
-![cover](./images/cover.png)
+![cover](./docs/cover.png)
 
 ## QuickStart
 Select `local` as the execution environment, and `iris_sklearn.py` as the script, and click **Run** button.  You can also set the _Regularization Rate_ by entering `0.01` in the **Arguments** control.  Changing the _Regularization Rate_ has an impact on the accuracy of the model, giving interesting results to explore.
