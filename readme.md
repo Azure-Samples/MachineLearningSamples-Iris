@@ -1,6 +1,6 @@
 # Classifying Iris
 
-![cover](./images/cover.png)
+![cover](./docs/cover.png)
 
 This is a companion sample project of the Iris tutorial that you can find from the main GitHub documentation site. Using the timeless [Iris flower dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set), it walks you through the basics. 
 
