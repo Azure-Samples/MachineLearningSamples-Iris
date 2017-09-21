@@ -24,7 +24,7 @@ os.makedirs('./outputs', exist_ok=True)
 print('Python version: {}'.format(sys.version))
 print()
 
-# load Iris dataset from a DataPrep package
+# load Iris dataset from a DataPrep package as a pandas DataFrame
 iris = run('iris.dprep', dataflow_idx=0, spark=False)
 print ('Iris dataset shape: {}'.format(iris.shape))
 
