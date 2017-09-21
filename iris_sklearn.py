@@ -25,7 +25,7 @@ print('Python version: {}'.format(sys.version))
 print()
 
 # load Iris dataset from a DataPrep package
-iris = run('iris.dprep', dataflow_idx=0)
+iris = run('iris.dprep', dataflow_idx=0, spark=False)
 print ('Iris dataset shape: {}'.format(iris.shape))
 
 # load features and labels
