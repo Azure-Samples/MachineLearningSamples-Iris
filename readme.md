@@ -1,6 +1,6 @@
 # Classifying Iris
 
-This is a companion sample project of the Azure Machine Learning QuickStart and Tutorials. Using the timeless [Iris flower dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set), it walks you through the basics of preparing dataset, creating a model and deploying it as a web service.
+This is a companion sample project of the Azure Machine Learning [QuickStart](https://docs.microsoft.com/azure/machine-learning/preview/quickstart-installation) and [Tutorials](https://docs.microsoft.com/azure/machine-learning/preview/tutorial-classifying-iris-part-1). Using the timeless [Iris flower dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set), it walks you through the basics of preparing dataset, creating a model and deploying it as a web service.
 
 ![cover](./docs/cover.png)
 
