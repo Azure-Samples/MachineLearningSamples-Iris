@@ -19,6 +19,9 @@ First, launch the Command Prompt or Powershell from the **File** menu. Then ente
 # first let's install matplotlib locally
 $ pip install matplotlib
 
+# log in to Azure if you haven't done so
+$ az login
+
 # kick off many local runs sequentially
 $ python run.py
 ```
