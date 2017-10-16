@@ -15,7 +15,7 @@ dependencies:
     - matplotlib
     
     # The API for Azure Machine Learning Model Management Service.
-    - azure-ml-api-sdk==0.1.0a10
+    - azure-ml-api-sdk==0.1.0a11
   
     # Library for collecting data from operationalized models
     - azureml.datacollector==0.1.0a13
