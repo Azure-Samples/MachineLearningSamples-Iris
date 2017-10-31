@@ -36,9 +36,9 @@ Run `iris_sklearn.py` Python script in a local Docker container.
 $ az ml experiment submit -c docker-python iris_sklearn.py
 ```
 
-Run `iris_pyspark.py` PySpark script in a local Docker container.
+Run `iris_spark.py` PySpark script in a local Docker container.
 ```
-$ az ml experiment submit -c docker-spark iris_pyspark.py
+$ az ml experiment submit -c docker-spark iris_spark.py
 ```
 
 Create `myvm` run configuration to point to a Docker container on a remote VM
@@ -49,9 +49,9 @@ $ az ml computetarget attach --name myvm --address <ip address or FQDN> --userna
 $ az ml experiment prepare -c myvm
 ```
 
-Run `iris_pyspark.py` PySpark script in a Docker container (with Spark) in a remote VM:
+Run `iris_spark.py` PySpark script in a Docker container (with Spark) in a remote VM:
 ```
-$ az ml experiment submit -c myvm iris_pyspark.py
+$ az ml experiment submit -c myvm iris_spark.py
 ```
 
 Create `myhdi` run configuration to point to an HDI cluster
@@ -64,5 +64,5 @@ $ az ml experiment prepare -c myhdi
 
 Run in a remote HDInsight cluster:
 ```
-$ az ml experiment submit -c myhdi iris_pyspark.py
+$ az ml experiment submit -c myhdi iris_spark.py
 ```
