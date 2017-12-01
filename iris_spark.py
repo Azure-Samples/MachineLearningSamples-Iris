@@ -11,6 +11,7 @@ from pyspark.ml.evaluation import *
 from pyspark.ml.feature import *
 
 from azureml.logging import get_azureml_logger
+from azureml.dataprep.package import run
 
 # initialize logger
 run_logger = get_azureml_logger() 
@@ -24,10 +25,9 @@ print ('Python version: {}'.format(sys.version))
 print ('Spark version: {}'.format(spark.version))
 print ('****************')
 
-# load iris.csv into Spark dataframe
-data = spark.createDataFrame(pd.read_csv('iris.csv', header=None, names=['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']))
-print("First 10 rows of Iris dataset:")
-data.show(10)
+# load Iris dataset from a DataPrep package as a pandas DataFrame
+data = run('iris.dprep', dataflow_idx=0, spark=False)
+print ('Iris dataset shape: {}'.format(data.shape))
 
 # vectorize all numerical columns into a single feature column
 feature_cols = data.columns[:-1]
