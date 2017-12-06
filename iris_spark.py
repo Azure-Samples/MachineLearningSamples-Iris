@@ -26,7 +26,7 @@ print ('Spark version: {}'.format(spark.version))
 print ('****************')
 
 # load Iris dataset from a DataPrep package as a pandas DataFrame
-data = run('iris.dprep', dataflow_idx=0, spark=True)
+data = run('iris.dprep', dataflow_idx=0, spark=False)
 print ('Iris dataset shape: {}'.format(data.shape))
 
 # vectorize all numerical columns into a single feature column
