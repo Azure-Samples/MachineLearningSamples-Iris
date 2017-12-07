@@ -43,7 +43,7 @@ $ az ml experiment submit -c docker-spark iris_spark.py
 
 Create `myvm` run configuration to point to a Docker container on a remote VM
 ```
-$ az ml computetarget attach --name myvm --address <ip address or FQDN> --username <username> --password <pwd> --type remotedocker
+$ az ml computetarget attach remotedocker --name myvm --address <ip address or FQDN> --username <username> --password <pwd>
 
 # prepare the environment
 $ az ml experiment prepare -c myvm
@@ -56,7 +56,7 @@ $ az ml experiment submit -c myvm iris_spark.py
 
 Create `myhdi` run configuration to point to an HDI cluster
 ```
-$ az ml computetarget attach --name myhdi --address <ip address or FQDN of the head node> --username <username> --password <pwd> --type cluster
+$ az ml computetarget attach cluster --name myhdi --address <ip address or FQDN of the head node> --username <username> --password <pwd>
 
 # prepare the environment
 $ az ml experiment prepare -c myhdi
