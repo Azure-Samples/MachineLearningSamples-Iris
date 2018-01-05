@@ -11,7 +11,7 @@ from pyspark.ml.evaluation import *
 from pyspark.ml.feature import *
 
 from azureml.logging import get_azureml_logger
-from azureml.dataprep.package import run
+from azureml.dataprep import package
 
 # initialize logger
 run_logger = get_azureml_logger() 
@@ -26,8 +26,9 @@ print ('Spark version: {}'.format(spark.version))
 print ('****************')
 
 # load Iris dataset from a DataPrep package as a pandas DataFrame
-data = run('iris.dprep', dataflow_idx=0, spark=True)
-print ('Iris dataset shape: {}'.format(data.shape))
+data = package.run('iris.dprep', dataflow_idx=0) 
+print("First 10 rows of Iris dataset:")
+data.show(10)
 
 # vectorize all numerical columns into a single feature column
 feature_cols = data.columns[:-1]
@@ -35,8 +36,8 @@ assembler = pyspark.ml.feature.VectorAssembler(inputCols=feature_cols, outputCol
 data = assembler.transform(data)
 
 # convert text labels into indices
-data = data.select(['features', 'class'])
-label_indexer = pyspark.ml.feature.StringIndexer(inputCol='class', outputCol='label').fit(data)
+data = data.select(['features', 'Species'])
+label_indexer = pyspark.ml.feature.StringIndexer(inputCol='Species', outputCol='label').fit(data)
 data = label_indexer.transform(data)
 
 # only select the features and label column
