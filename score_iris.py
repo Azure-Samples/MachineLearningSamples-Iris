@@ -24,7 +24,7 @@ def init():
     global inputs_dc, prediction_dc
     from sklearn.externals import joblib
 
-    # load the model file
+    # load the model from file into a global object
     global model
     model = joblib.load('model.pkl')
 
@@ -42,8 +42,14 @@ def run(input_df):
     input_df = np.c_[input_df, random_state.randn(n_samples, n)]
     inputs_dc.collect(input_df)
 
+    # make prediction using the model
     pred = model.predict(input_df)
     prediction_dc.collect(pred)
+    
+    # return all predictions
+    # return json.dumps(pred.tolist())
+    
+    # return just the first prediction
     return json.dumps(str(pred[0]))
 
 def main():
