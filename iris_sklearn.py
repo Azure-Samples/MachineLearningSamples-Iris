@@ -63,7 +63,7 @@ print ("Accuracy is {}".format(accuracy))
 # log accuracy which is a single numerical value
 run_logger.log("Accuracy", accuracy)
 
-# calculate and log precesion, recall, and thresholds, which are list of numerical values
+# calculate and log precision, recall, and thresholds, which are list of numerical values
 y_scores = clf1.predict_proba(X_test)
 precision, recall, thresholds = precision_recall_curve(Y_test, y_scores[:,1],pos_label='Iris-versicolor')
 run_logger.log("Precision", precision)
