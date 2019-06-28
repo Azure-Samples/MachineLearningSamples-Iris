@@ -1,5 +1,7 @@
 # Classifying Iris
 
+> **NOTE** This content is no longer maintained. Visit the [Azure Machine Learning Notebook](https://github.com/Azure/MachineLearningNotebooks) project for sample Jupyter notebooks for ML and deep learning with Azure Machine Learning.
+
 This is a companion sample project of the Azure Machine Learning [QuickStart](https://docs.microsoft.com/azure/machine-learning/preview/quickstart-installation) and [Tutorials](https://docs.microsoft.com/azure/machine-learning/preview/tutorial-classifying-iris-part-1). Using the timeless [Iris flower dataset](https://en.wikipedia.org/wiki/Iris_flower_data_set), it walks you through the basics of preparing dataset, creating a model and deploying it as a web service.
 
 ![cover](./docs/iris.png)
